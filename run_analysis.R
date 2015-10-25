@@ -48,8 +48,8 @@ names(reshaped_data) <- gsub("Acc", "Accelerometer.", names(reshaped_data))
 names(reshaped_data) <- gsub("Gyro", "Gyroscope.", names(reshaped_data))
 names(reshaped_data) <- gsub("Mag", "Magnitude.", names(reshaped_data))
 names(reshaped_data) <- gsub("BodyBody", "Body.", names(reshaped_data))
-names(reshaped_data) <- gsub("-mean()", "Mean", names(reshaped_data))
-names(reshaped_data) <- gsub("-std()", "StDev", names(reshaped_data))
+names(reshaped_data) <- gsub("-mean\\(\\)", "Mean", names(reshaped_data))
+names(reshaped_data) <- gsub("-std\\(\\)", "StDev", names(reshaped_data))
 
 # create final data set with the average of each variable for each activity and each subject.
 aggregate_data <- aggregate(. ~Subject.Id + Activity, reshaped_data, mean)
